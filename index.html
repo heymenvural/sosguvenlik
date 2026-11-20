@@ -58,9 +58,11 @@
 .nav-inst.on{display:inline-flex}
 .nav-inst svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2}
 @media(min-width:1001px){.nav-inst{margin:0 12px 0 0}}
+body.inst-on .chat-btn{opacity:0;pointer-events:none}
 @media(max-width:640px){.inst{bottom:84px}.nav-inst{padding:0;width:42px;height:42px;justify-content:center;margin-right:2px}.nav-inst span{display:none}.nav-inst svg{width:20px;height:20px}.brand{overflow:hidden}.brand small{display:block;overflow:hidden;text-overflow:ellipsis}}
 </style>
 
+<link rel="preload" as="image" href="/logo-320.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -346,6 +348,7 @@ footer{background:var(--navy);color:#c3cbdb;padding:60px 0 24px}
  .mbar svg{width:20px;height:20px;fill:#fff}
  body{padding-bottom:70px}
 }
+@media(max-width:640px){nav{backdrop-filter:none;background:#fff}.hero::before{display:none}.rv{transform:none;transition:opacity .4s}.prog:hover,.svc:hover{transform:none}html{scroll-padding-top:70px}.chat-btn{transition:opacity .2s}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 /* hizmetler */
 #hizmetler{background:#fff}
@@ -393,7 +396,7 @@ footer{background:var(--navy);color:#c3cbdb;padding:60px 0 24px}
 <body>
 <div id="intro" aria-hidden="true">
  <div class="in">
-  <div class="sh"><div class="rg"></div><img src="/logo.png" alt=""></div>
+  <div class="sh"><div class="rg"></div><img src="/logo-320.webp" alt="" width="150" height="174"></div>
   <h2>SOS</h2>
   <p>Özel Güvenlik Eğitim Kurumu</p>
   <div class="bar"><i></i></div>
@@ -415,7 +418,7 @@ footer{background:var(--navy);color:#c3cbdb;padding:60px 0 24px}
 </div></div>
 
 <nav id="nav"><div class="wrap">
- <a href="#top" class="brand"><img src="/logo.png" alt="SOS logo" width="45" height="52"><span><b>SOS</b><small>ÖZEL GÜVENLİK EĞİTİM KURUMU</small></span></a>
+ <a href="#top" class="brand"><img src="/logo-120.webp" alt="SOS logo" width="45" height="52"><span><b>SOS</b><small>ÖZEL GÜVENLİK EĞİTİM KURUMU</small></span></a>
  <ul class="menu" id="menu">
   <li><a href="#hizmetler">Hizmetler</a></li>
   <li><a href="#egitimler">Eğitimler</a></li>
@@ -444,7 +447,7 @@ footer{background:var(--navy);color:#c3cbdb;padding:60px 0 24px}
    <span><svg viewBox="0 0 24 24"><path d="M12 22s8-7 8-13a8 8 0 10-16 0c0 6 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg>Kızılay merkezi konum</span>
   </div>
  </div>
- <div class="emblem"><div class="ring"></div><img src="/logo.png" alt="SOS Özel Güvenlik amblemi" width="380" height="441"></div>
+ <div class="emblem"><div class="ring"></div><img src="/logo.webp" srcset="/logo-320.webp 320w, /logo.webp 640w" sizes="(max-width:640px) 150px, (max-width:1000px) 190px, 340px" alt="SOS Özel Güvenlik amblemi" width="380" height="441" fetchpriority="high"></div>
 </div></header>
 
 <div class="stats"><div class="wrap">
@@ -526,7 +529,7 @@ footer{background:var(--navy);color:#c3cbdb;padding:60px 0 24px}
 </div></section>
 
 <section id="hakkimizda" class="about"><div class="wrap">
- <div class="vis rv"><img src="/logo.png" alt="SOS amblem" loading="lazy" width="300" height="348">
+ <div class="vis rv"><img src="/logo.webp" srcset="/logo-320.webp 320w, /logo.webp 640w" sizes="(max-width:640px) 180px, 280px" alt="SOS amblem" loading="lazy" width="300" height="348">
   <div class="tagx"><div><b>Ankara</b>Kızılay</div><div><b>Yetkili</b>Eğitim Kurumu</div></div>
  </div>
  <div class="rv">
@@ -648,7 +651,7 @@ footer{background:var(--navy);color:#c3cbdb;padding:60px 0 24px}
 
 <footer><div class="wrap">
  <div class="ft">
-  <div><img src="/logo.png" alt="SOS" loading="lazy" width="64" height="74"><p>SOS Güvenlik, Koruma ve Eğitim Hizmetleri – Ankara Kızılay'da özel güvenlik temel, geçiş ve yenileme eğitimleri.</p>
+  <div><img src="/logo-120.webp" alt="SOS" loading="lazy" width="64" height="74"><p>SOS Güvenlik, Koruma ve Eğitim Hizmetleri – Ankara Kızılay'da özel güvenlik temel, geçiş ve yenileme eğitimleri.</p>
    <div class="soc"><a href="https://www.instagram.com/767sos/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zM17.3 5.5a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zM21.9 7c0-1.4-.4-2.6-1.3-3.6S18.4 1.9 17 1.9C15.6 1.8 8.4 1.8 7 1.9c-1.4 0-2.6.5-3.6 1.4S1.9 5.6 1.9 7c-.1 1.4-.1 8.6 0 10 0 1.4.5 2.6 1.4 3.6s2.2 1.4 3.6 1.4c1.4.1 8.6.1 10 0 1.4 0 2.6-.4 3.6-1.4s1.4-2.2 1.4-3.6c.1-1.4.1-8.6 0-10z"/></svg></a>
    <a href="https://x.com/sos767guvenlik" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.2 2h3.4l-7.4 8.5L23 22h-6.8l-5.3-7-6.1 7H1.4l7.9-9L1 2h7l4.8 6.4zm-1.2 18h1.9L7.1 3.9H5z"/></svg></a></div></div>
   <div><h4>Eğitimler</h4><ul><li><a href="#egitimler">Silahsız Temel</a></li><li><a href="#egitimler">Silahlı Temel</a></li><li><a href="#egitimler">Geçiş Eğitimi</a></li><li><a href="#egitimler">Yenileme</a></li></ul></div>
@@ -799,7 +802,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')C.classList.remove('
 </div>
 <div class="ios-sheet" id="iosSheet"><div class="c">
  <h4>Ana Ekrana Ekle</h4>
- <ol>
+ <ol id="instSteps">
   <li>Safari'nin alt çubuğundaki <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f63b0" stroke-width="2"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 12v8h14v-8"/></svg></span> <b>Paylaş</b> simgesine dokunun.</li>
   <li>Listeden <b>“Ana Ekrana Ekle”</b> seçeneğini seçin.</li>
   <li>Sağ üstteki <b>Ekle</b>'ye dokunun. SOS uygulaması ana ekranınızda!</li>
@@ -814,21 +817,28 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')C.classList.remove('
  var ua=navigator.userAgent,isIOS=/iphone|ipad|ipod/i.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
  var isSafari=isIOS&&/safari/i.test(ua)&&!/crios|fxios|edgios|opios/i.test(ua);
  var mobile=matchMedia('(max-width:1000px)').matches;
- var box=document.getElementById('inst'),sheet=document.getElementById('iosSheet'),deferred=null;
- var navBtn=document.createElement('button');navBtn.className='nav-inst';navBtn.type='button';
+ var box=document.getElementById('inst'),sheet=document.getElementById('iosSheet'),steps=document.getElementById('instSteps'),deferred=null,shown=false;
+ var navBtn=document.createElement('button');navBtn.className='nav-inst';navBtn.type='button';navBtn.setAttribute('aria-label','Uygulamayı yükle');
  navBtn.innerHTML='<svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg><span>Uygulama</span>';
  var burger=document.getElementById('burger');burger.parentNode.insertBefore(navBtn,burger);
- function dismissed(){try{var t=+localStorage.getItem('sosInstNo')||0;return Date.now()-t<3*864e5}catch(e){return false}}
- function show(){if(!dismissed())setTimeout(function(){box.classList.add('show')},3500)}
+ function remember(){try{localStorage.setItem('sosInstNo',Date.now())}catch(e){}}
+ function dismissed(){try{return Date.now()-(+localStorage.getItem('sosInstNo')||0)<3*864e5}catch(e){return false}}
+ function hide(){box.classList.remove('show');document.body.classList.remove('inst-on')}
+ function show(){if(shown||dismissed())return;shown=true;setTimeout(function(){if(!dismissed()){box.classList.add('show');document.body.classList.add('inst-on')}},3500)}
+ function guide(){
+  if(isIOS&&!isSafari)steps.innerHTML='<li>Bu sayfayı <b>Safari</b> ile açın (iPhone\'da yalnızca Safari ana ekrana ekleyebilir).</li><li>Alt çubuktaki <b>Paylaş</b> simgesine dokunun.</li><li><b>“Ana Ekrana Ekle”</b> → <b>Ekle</b>.</li>';
+  else if(!isIOS)steps.innerHTML='<li>Tarayıcının sağ üstündeki <b>⋮</b> menüsüne dokunun.</li><li><b>“Uygulamayı yükle”</b> veya <b>“Ana ekrana ekle”</b> seçeneğini seçin.</li><li><b>Yükle / Ekle</b>\'ye dokunun. SOS uygulaması ana ekranınızda!</li>';
+  sheet.classList.add('show')}
  function install(){
-  if(deferred){deferred.prompt();deferred.userChoice.then(function(){deferred=null;box.classList.remove('show');navBtn.classList.remove('on')})}
-  else if(isIOS){box.classList.remove('show');sheet.classList.add('show')}
+  hide();remember();
+  if(deferred){var d=deferred;deferred=null;try{d.prompt();d.userChoice.then(function(c){if(c&&c.outcome==='accepted')navBtn.classList.remove('on')}).catch(function(){})}catch(e){guide()}}
+  else guide();
  }
  addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;navBtn.classList.add('on');if(mobile)show()});
- addEventListener('appinstalled',function(){box.classList.remove('show');navBtn.classList.remove('on')});
- if(isIOS){navBtn.classList.add('on');if(isSafari)show()}
+ addEventListener('appinstalled',function(){hide();remember();navBtn.classList.remove('on')});
+ if(mobile){navBtn.classList.add('on');if(isIOS)show()}
  document.getElementById('instY').onclick=install;navBtn.onclick=install;
- document.getElementById('instN').onclick=function(){box.classList.remove('show');try{localStorage.setItem('sosInstNo',Date.now())}catch(e){}};
+ document.getElementById('instN').onclick=function(){hide();remember()};
  document.getElementById('iosOk').onclick=function(){sheet.classList.remove('show')};
  sheet.onclick=function(e){if(e.target===sheet)sheet.classList.remove('show')};
 })();
