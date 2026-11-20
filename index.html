@@ -298,6 +298,47 @@ footer{background:var(--navy);color:#c3cbdb;padding:60px 0 24px}
  body{padding-bottom:70px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+/* hizmetler */
+#hizmetler{background:#fff}
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;transition:.25s}
+.svc:hover{transform:translateY(-4px);background:#fff;box-shadow:0 18px 40px rgba(22,35,63,.08)}
+.svc .ic{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;background:var(--red-soft);margin-bottom:16px}
+.svc h3{font-size:1.25rem;margin-bottom:8px}
+.svc p{color:var(--mut);font-size:.95rem}
+.svc-cta{text-align:center;margin-top:34px}
+/* asistan */
+.chat-btn{position:fixed;left:18px;bottom:18px;z-index:260;display:flex;align-items:center;gap:10px;padding:0 18px 0 6px;height:54px;border-radius:99px;border:0;cursor:pointer;background:var(--navy);color:#fff;font:600 .95rem Inter;box-shadow:0 10px 26px rgba(22,35,63,.3)}
+.chat-btn img{width:42px;height:42px;border-radius:50%;background:#fff;padding:4px;object-fit:contain}
+.chat-btn i{position:absolute;top:6px;left:40px;width:11px;height:11px;border-radius:50%;background:#3ccf7a;border:2px solid var(--navy)}
+.chat{position:fixed;left:18px;bottom:84px;z-index:270;width:370px;max-width:calc(100vw - 24px);height:540px;max-height:calc(100vh - 110px);background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(22,35,63,.28);display:flex;flex-direction:column;overflow:hidden;transform:translateY(16px) scale(.98);opacity:0;pointer-events:none;transition:.25s}
+.chat.open{transform:none;opacity:1;pointer-events:auto}
+.chat-h{background:var(--navy);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.chat-h img{width:40px;height:40px;border-radius:50%;background:#fff;padding:4px;object-fit:contain}
+.chat-h b{display:block;font-family:Oswald;font-size:1.05rem;color:#fff;letter-spacing:.3px}
+.chat-h small{color:#b9c3d6;font-size:.78rem}
+.chat-x{margin-left:auto;background:rgba(255,255,255,.1);border:0;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.chat-b{flex:1;overflow-y:auto;padding:16px;background:var(--bg);display:flex;flex-direction:column;gap:10px}
+.msg{max-width:86%;padding:10px 14px;border-radius:14px;font-size:.93rem;line-height:1.55;white-space:pre-line}
+.msg.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.me{background:var(--navy);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.msg a{color:var(--red);font-weight:600;text-decoration:underline}
+.qr{display:flex;flex-wrap:wrap;gap:6px}
+.qr button{border:1px solid #cfd5e1;background:#fff;color:var(--navy);border-radius:99px;padding:7px 12px;font:500 .84rem Inter;cursor:pointer}
+.qr button:hover{border-color:var(--red);color:var(--red)}
+.typing{display:flex;gap:4px;padding:12px 14px}.typing span{width:7px;height:7px;border-radius:50%;background:#aab2c2;animation:tp 1s infinite}
+.typing span:nth-child(2){animation-delay:.15s}.typing span:nth-child(3){animation-delay:.3s}
+@keyframes tp{50%{transform:translateY(-4px);opacity:.5}}
+.chat-f{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:#fff}
+.chat-f input{min-height:44px;border-radius:99px;padding:10px 16px}
+.chat-f button{width:44px;height:44px;flex-shrink:0;border-radius:50%;border:0;background:var(--red);color:#fff;cursor:pointer;font-size:1.1rem}
+@media(max-width:1000px){.svcs{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){
+ .svcs{grid-template-columns:1fr}
+ .chat-btn{left:auto;right:14px;bottom:82px;padding:0;width:54px;justify-content:center}
+ .chat-btn span{display:none}.chat-btn i{left:38px}
+ .chat{left:8px;right:8px;width:auto;max-width:none;bottom:8px;height:calc(100% - 16px);max-height:none;z-index:400}
+}
 </style>
 </head>
 <body>
@@ -311,6 +352,7 @@ footer{background:var(--navy);color:#c3cbdb;padding:60px 0 24px}
 <nav id="nav"><div class="wrap">
  <a href="#top" class="brand"><img src="/logo.png" alt="SOS logo" width="45" height="52"><span><b>SOS</b><small>ÖZEL GÜVENLİK EĞİTİM KURUMU</small></span></a>
  <ul class="menu" id="menu">
+  <li><a href="#hizmetler">Hizmetler</a></li>
   <li><a href="#egitimler">Eğitimler</a></li>
   <li><a href="#hakkimizda">Hakkımızda</a></li>
   <li><a href="#surec">Süreç</a></li>
@@ -346,6 +388,19 @@ footer{background:var(--navy);color:#c3cbdb;padding:60px 0 24px}
  <div class="stat"><b>EGM</b><span>Sınavına Hazırlık</span></div>
  <div class="stat"><b>%100</b><span>Uygulamalı Eğitim</span></div>
 </div></div>
+
+<section id="hizmetler"><div class="wrap">
+ <div class="head rv"><span class="kicker">Hizmetlerimiz</span><h2>Güvenlik, Koruma ve <span class="gold">Eğitim</span> Hizmetleri</h2><p>SOS Güvenlik, Koruma ve Eğitim Hizmetleri olarak kurumlara güvenlik çözümleri, bireylere mesleki eğitim sunuyoruz.</p></div>
+ <div class="svcs">
+  <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Özel Güvenlik Hizmetleri</h3><p>İşyeri, kurum, site ve tesisler için 5188 sayılı Kanun'a uygun, eğitimli personelle silahlı ve silahsız güvenlik hizmeti.</p></div>
+  <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 7l10-4 10 4-10 4z"/><path d="M6 9v5c0 2 3 3.5 6 3.5s6-1.5 6-3.5V9"/></svg></div><h3>Özel Güvenlik Temel Eğitimleri</h3><p>Silahsız ve silahlı temel eğitimlerle mesleğe ilk adım; EGM sınavına teorik ve uygulamalı hazırlık.</p></div>
+  <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div><h3>Yenileme ve Geçiş Eğitimleri</h3><p>Kimlik kartı yenileme eğitimleri ve silahsızdan silahlıya geçiş programı ile kariyerinizi kesintisiz sürdürün.</p></div>
+  <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-6 6.5-6s6.5 2.5 6.5 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.2c3 .2 5.5 2.4 5.5 5.3"/></svg></div><h3>Kurumsal Personel Eğitimleri</h3><p>Kurumların güvenlik personeline yönelik grup eğitimleri ve dönemsel bilgi tazeleme programları.</p></div>
+  <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h9"/></svg></div><h3>Sınav ve Kayıt Danışmanlığı</h3><p>Evrak hazırlığı, sınav başvurusu ve kimlik kartı süreçlerinde baştan sona rehberlik.</p></div>
+  <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div><h3>Güvenlik Danışmanlığı</h3><p>Kurum ve işletmeler için risk değerlendirmesi, güvenlik planlaması ve ihtiyaca uygun personel planlaması.</p></div>
+ </div>
+ <div class="svc-cta rv"><a href="#iletisim" class="btn btn-red">Hizmet Teklifi Alın →</a></div>
+</div></section>
 
 <section id="egitimler"><div class="wrap">
  <div class="head rv"><span class="kicker">Eğitim Programları</span><h2>Size Uygun <span class="gold">Eğitimi</span> Seçin</h2><p>Teorik dersler, uygulamalı çalışmalar ve silahlı programlarda atış eğitimiyle sınava ve sahaya tam hazırlık.</p></div>
@@ -532,7 +587,7 @@ footer{background:var(--navy);color:#c3cbdb;padding:60px 0 24px}
    <div class="soc"><a href="https://www.instagram.com/767sos/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zM17.3 5.5a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zM21.9 7c0-1.4-.4-2.6-1.3-3.6S18.4 1.9 17 1.9C15.6 1.8 8.4 1.8 7 1.9c-1.4 0-2.6.5-3.6 1.4S1.9 5.6 1.9 7c-.1 1.4-.1 8.6 0 10 0 1.4.5 2.6 1.4 3.6s2.2 1.4 3.6 1.4c1.4.1 8.6.1 10 0 1.4 0 2.6-.4 3.6-1.4s1.4-2.2 1.4-3.6c.1-1.4.1-8.6 0-10z"/></svg></a>
    <a href="https://x.com/sos767guvenlik" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.2 2h3.4l-7.4 8.5L23 22h-6.8l-5.3-7-6.1 7H1.4l7.9-9L1 2h7l4.8 6.4zm-1.2 18h1.9L7.1 3.9H5z"/></svg></a></div></div>
   <div><h4>Eğitimler</h4><ul><li><a href="#egitimler">Silahsız Temel</a></li><li><a href="#egitimler">Silahlı Temel</a></li><li><a href="#egitimler">Geçiş Eğitimi</a></li><li><a href="#egitimler">Yenileme</a></li></ul></div>
-  <div><h4>Kurum</h4><ul><li><a href="#hakkimizda">Hakkımızda</a></li><li><a href="#surec">Süreç</a></li><li><a href="#belgeler">Belgeler</a></li><li><a href="#sss">SSS</a></li></ul></div>
+  <div><h4>Kurum</h4><ul><li><a href="#hizmetler">Hizmetler</a></li><li><a href="#hakkimizda">Hakkımızda</a></li><li><a href="#surec">Süreç</a></li><li><a href="#belgeler">Belgeler</a></li><li><a href="#sss">SSS</a></li></ul></div>
   <div><h4>İletişim</h4><ul><li>Gazi Mustafa Kemal Blv. No:24/4 Kızılay, Çankaya / Ankara</li><li><a href="tel:+905452301767">0545 230 17 67</a></li><li><a href="tel:+905016534156">0501 653 41 56</a></li><li><a href="tel:+903122301767">0312 230 17 67</a></li></ul></div>
  </div>
  <div class="copy">© <span id="yr"></span> SOS Özel Güvenlik Eğitim Kurumu. Tüm hakları saklıdır.</div>
@@ -621,6 +676,56 @@ $$('.fq button').forEach(b=>b.onclick=()=>{const f=b.parentElement,a=f.querySele
 $('#form').addEventListener('submit',e=>{e.preventDefault();
  const m=`*Ön Kayıt Talebi*\nAd Soyad: ${$('#ad').value}\nTelefon: ${$('#tel').value}\nProgram: ${$('#prog').value}\nGrup: ${$('#grp').value}\nNot: ${$('#not').value||'-'}`;
  open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(m)}`,'_blank')});
+</script>
+<button class="chat-btn" id="chatBtn" aria-label="SOS Asistan"><img src="/favicon.png" alt=""><i></i><span>Size nasıl yardımcı olabilirim?</span></button>
+<div class="chat" id="chat" role="dialog" aria-label="SOS Asistan">
+ <div class="chat-h"><img src="/favicon.png" alt=""><div><b>SOS Asistan</b><small>Genellikle anında yanıt verir</small></div><button class="chat-x" id="chatX" aria-label="Kapat">×</button></div>
+ <div class="chat-b" id="chatB"></div>
+ <form class="chat-f" id="chatF"><input id="chatI" placeholder="Sorunuzu yazın…" autocomplete="off" aria-label="Mesaj"><button aria-label="Gönder">➤</button></form>
+</div>
+<script>
+/* SOS Asistan — tamamen tarayıcıda çalışır, API/token maliyeti yoktur */
+(()=>{
+const TEL='0545 230 17 67',TELH='tel:+905452301767',WA='https://wa.me/905452301767?text='+encodeURIComponent('Merhaba, bilgi almak istiyorum.');
+const KB=[
+ {k:['merhaba','selam','iyi gün','günaydın','hey'],a:'Merhaba! 👋 SOS Özel Güvenlik Eğitim Kurumu asistanıyım. Eğitimler, şartlar, kayıt, ücret veya iletişim hakkında sorabilirsiniz.'},
+ {k:['eğitim','kurs','program','hangi','neler'],a:'Eğitim programlarımız:\n• Silahsız Özel Güvenlik Temel Eğitimi\n• Silahlı Özel Güvenlik Temel Eğitimi\n• Silahsızdan Silahlıya Geçiş\n• Silahsız Yenileme\n• Silahlı Yenileme\n\nHangisinin size uygun olduğunu bilmiyorsanız "uygun eğitim" yazın.',q:['Uygun eğitim','Şartlar','Kayıt']},
+ {k:['uygun','bana','karar','emin değil','test'],a:'Kısa test ile size uygun eğitimi bulabilirsiniz: <a href="#araclar" data-close>Testi aç</a>\n\nKısaca: kartınız yoksa temel eğitim, silahsız kartınız varsa geçiş veya yenileme, silahlı kartınız varsa silahlı yenileme.'},
+ {k:['şart','gerek','koşul','yaş','kimler','başvur'],a:'Genel şartlar:\n• T.C. vatandaşı olmak\n• En az lise veya dengi okul mezunu olmak\n• Silahsız için 18, silahlı için 21 yaşını doldurmak\n• Görevine engel sağlık sorunu olmamak\n• Kanunda sayılan suçlardan mahkûmiyet olmamak\n\nDurumunuza özel bilgi için bizi arayın: <a href="'+TELH+'">'+TEL+'</a>'},
+ {k:['silahlı','silahli','atış','poligon','silah'],a:'Silahlı Özel Güvenlik Temel Eğitimi; silahsız programın içeriğine ek olarak silah bilgisi, güvenli kullanım ve atış eğitimini kapsar. Silahlı görev için 21 yaş şartı vardır.',q:['Kayıt','Ücret']},
+ {k:['silahsız','silahsiz','ilk kez','yeni başla'],a:'Silahsız Özel Güvenlik Temel Eğitimi mesleğe ilk adımdır: mevzuat, ilk yardım, yangın, arama teknikleri, halkla ilişkiler ve EGM sınavına hazırlık.',q:['Şartlar','Kayıt']},
+ {k:['geçiş','gecis','silahlıya'],a:'Silahsız kimlik kartınız varsa Silahsızdan Silahlıya Geçiş Eğitimi ile silahlı statüye geçebilirsiniz. 21 yaş şartını sağlamanız gerekir.',q:['Kayıt','Ücret']},
+ {k:['yenile','süresi','dolu','5 yıl','geçerlilik','kimlik kart'],a:'Özel güvenlik kimlik kartı 5 yıl geçerlidir; süre bitmeden yenileme eğitimi alıp sınavda başarılı olmanız gerekir. Bitiş tarihinizi hesaplamak için: <a href="#araclar" data-close>Yenileme hesaplayıcı</a>'},
+ {k:['sınav','sinav','egm','emniyet'],a:'Özel güvenlik sınavları Emniyet Genel Müdürlüğü (EGM) tarafından yapılır. Eğitimi tamamladıktan sonra sınav takvimine göre başvurursunuz; süreç boyunca biz rehberlik ediyoruz.'},
+ {k:['ücret','ucret','fiyat','kaç para','ne kadar','taksit','ödeme'],a:'Ücretler döneme ve programa göre değişiyor. Güncel fiyat ve ödeme seçenekleri için:\n📞 <a href="'+TELH+'">'+TEL+'</a>\n💬 <a href="'+WA+'" target="_blank" rel="noopener">WhatsApp\'tan yazın</a>'},
+ {k:['evrak','belge','doküman','gerekli'],a:'Genel olarak: nüfus cüzdanı fotokopisi, diploma, vesikalık fotoğraf, sağlık raporu ve adli sicil kaydı. Yenileme/geçiş için mevcut kimlik kartı fotokopisi. Kontrol listesi: <a href="#belgeler" data-close>Belgeler</a>'},
+ {k:['saat','gün','hafta sonu','hafta içi','grup','ne zaman','başlıyor','dönem'],a:'Hafta içi ve hafta sonu grupları açılıyor. Kurumumuz hafta içi 09:00–17:00 arası açıktır. Yeni dönem başlangıç tarihi için bizi arayın: <a href="'+TELH+'">'+TEL+'</a>'},
+ {k:['adres','nerede','konum','yer','nasıl gel','kızılay','harita'],a:'📍 Kızılay Mah. Gazi Mustafa Kemal Bulvarı No:24/4, Çankaya / Ankara\nKızılay metrosuna yürüme mesafesindeyiz. <a href="#iletisim" data-close>Haritada gör</a>'},
+ {k:['telefon','iletişim','numara','ara','ulaş','whatsapp'],a:'📞 <a href="'+TELH+'">'+TEL+'</a>\n📞 <a href="tel:+905016534156">0501 653 41 56</a>\n☎️ <a href="tel:+903122301767">0312 230 17 67</a>\n💬 <a href="'+WA+'" target="_blank" rel="noopener">WhatsApp</a>'},
+ {k:['kayıt','kayit','ön kayıt','başvuru yap','yazıl'],a:'Ön kayıt için formu doldurun, sizi arayalım: <a href="#iletisim" data-close>Ön Kayıt Formu</a>\nYa da hemen arayın: <a href="'+TELH+'">'+TEL+'</a>'},
+ {k:['hizmet','güvenlik hizmeti','personel','firma','kurum','şirket','teklif'],a:'Eğitimlerin yanı sıra kurumlara özel güvenlik hizmeti, kurumsal personel eğitimi ve güvenlik danışmanlığı sunuyoruz. Teklif için: <a href="'+WA+'" target="_blank" rel="noopener">WhatsApp</a> veya <a href="'+TELH+'">'+TEL+'</a>'},
+ {k:['instagram','sosyal'],a:'Instagram hesabımız: <a href="https://www.instagram.com/767sos/" target="_blank" rel="noopener">@767sos</a>'},
+ {k:['teşekkür','sağol','sağ ol','eyvallah','tamam'],a:'Rica ederim! Başka sorunuz olursa buradayım. 😊'}
+];
+const QR=['Eğitimler','Şartlar','Ücret','Adres','Kayıt'];
+const norm=t=>t.toLocaleLowerCase('tr-TR').replace(/[?!.,]/g,' ');
+function answer(t){const n=norm(t);let best=null,sc=0;
+ KB.forEach(e=>{const s=e.k.reduce((a,k)=>a+(n.includes(k)?k.length:0),0);if(s>sc){sc=s;best=e}});
+ return best||{a:'Bu konuda size en doğru bilgiyi ekibimiz verebilir:\n📞 <a href="'+TELH+'">'+TEL+'</a>\n💬 <a href="'+WA+'" target="_blank" rel="noopener">WhatsApp\'tan yazın</a>',q:QR}}
+const B=document.getElementById('chatB'),C=document.getElementById('chat'),I=document.getElementById('chatI');
+function add(html,who){const d=document.createElement('div');d.className='msg '+who;if(who==='me')d.textContent=html;else d.innerHTML=html;B.appendChild(d);B.scrollTop=B.scrollHeight}
+function quick(list){const w=document.createElement('div');w.className='qr';list.forEach(x=>{const b=document.createElement('button');b.type='button';b.textContent=x;b.onclick=()=>{w.remove();ask(x)};w.appendChild(b)});B.appendChild(w);B.scrollTop=B.scrollHeight}
+function ask(t){if(!t.trim())return;B.querySelectorAll('.qr').forEach(q=>q.remove());add(t,'me');
+ const ty=document.createElement('div');ty.className='msg bot typing';ty.innerHTML='<span></span><span></span><span></span>';B.appendChild(ty);B.scrollTop=B.scrollHeight;
+ setTimeout(()=>{ty.remove();const r=answer(t);add(r.a,'bot');quick(r.q||QR)},450)}
+let started=false;
+function open_(){C.classList.add('open');if(!started){started=true;add(KB[0].a,'bot');quick(QR)}setTimeout(()=>I.focus(),250)}
+document.getElementById('chatBtn').onclick=()=>C.classList.contains('open')?C.classList.remove('open'):open_();
+document.getElementById('chatX').onclick=()=>C.classList.remove('open');
+document.getElementById('chatF').onsubmit=e=>{e.preventDefault();ask(I.value);I.value=''};
+B.addEventListener('click',e=>{if(e.target.closest('[data-close]'))C.classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')C.classList.remove('open')});
+})();
 </script>
 </body>
 </html>
