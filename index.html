@@ -12,6 +12,55 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#16233f">
 <link rel="icon" type="image/png" href="/favicon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SOS Güvenlik">
+<style>
+/* açılış animasyonu */
+#intro{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#22355e 0%,#16233f 55%,#0d1528 100%);transition:opacity .6s ease,visibility .6s}
+#intro.done{opacity:0;visibility:hidden}
+#intro .in{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+#intro .sh{position:relative;width:150px}
+#intro .sh img{width:100%;opacity:0;transform:scale(.6) translateY(20px);animation:iLogo .9s cubic-bezier(.2,.9,.3,1.2) .15s forwards;filter:drop-shadow(0 18px 40px rgba(0,0,0,.45))}
+#intro .sh::after{content:"";position:absolute;inset:-8% -30%;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%);transform:translateX(-120%);animation:iShine 1s ease .95s forwards;mix-blend-mode:overlay;pointer-events:none}
+#intro .rg{position:absolute;left:50%;top:50%;width:230px;height:230px;margin:-115px 0 0 -115px;border-radius:50%;border:2px solid rgba(230,195,110,.5);opacity:0;animation:iRing 1.4s ease-out .35s forwards}
+#intro h2{font-family:Oswald,sans-serif;color:#fff;font-size:2.4rem;letter-spacing:10px;opacity:0;animation:iUp .6s ease 1s forwards;margin:0}
+#intro p{color:#e6c36e;font-size:.72rem;letter-spacing:4px;text-transform:uppercase;opacity:0;animation:iUp .6s ease 1.2s forwards;margin:0}
+#intro .bar{width:140px;height:3px;border-radius:3px;background:rgba(255,255,255,.12);overflow:hidden;opacity:0;animation:iUp .4s ease 1.3s forwards}
+#intro .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#b3122a,#e6c36e);animation:iBar .9s ease 1.4s forwards}
+#intro button{position:absolute;bottom:24px;right:20px;background:none;border:0;color:rgba(255,255,255,.55);font:500 .85rem Inter,sans-serif;cursor:pointer;padding:10px}
+@keyframes iLogo{to{opacity:1;transform:none}}
+@keyframes iShine{to{transform:translateX(120%)}}
+@keyframes iRing{0%{opacity:.9;transform:scale(.5)}100%{opacity:0;transform:scale(1.5)}}
+@keyframes iUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes iBar{to{width:100%}}
+@media(prefers-reduced-motion:reduce){#intro{display:none}}
+/* uygulama yükle */
+.inst{position:fixed;left:12px;right:12px;bottom:12px;z-index:390;max-width:440px;margin:0 auto;background:#fff;border-radius:18px;box-shadow:0 20px 50px rgba(22,35,63,.3);padding:16px;display:flex;gap:14px;align-items:center;transform:translateY(140%);transition:transform .45s cubic-bezier(.2,.9,.3,1)}
+.inst.show{transform:none}
+.inst img{width:56px;height:56px;border-radius:14px;flex-shrink:0}
+.inst b{display:block;font-family:Oswald,sans-serif;color:#16233f;font-size:1.1rem;letter-spacing:.3px}
+.inst small{display:block;color:#5b6476;font-size:.84rem;line-height:1.4}
+.inst .ac{display:flex;flex-direction:column;gap:6px;margin-left:auto;flex-shrink:0}
+.inst .y{background:#b3122a;color:#fff;border:0;border-radius:10px;padding:10px 16px;font:600 .9rem Inter,sans-serif;cursor:pointer;min-height:42px}
+.inst .n{background:none;border:0;color:#5b6476;font:500 .8rem Inter,sans-serif;cursor:pointer;padding:4px}
+.ios-sheet{position:fixed;inset:0;z-index:420;background:rgba(13,21,40,.55);display:none;align-items:flex-end;justify-content:center}
+.ios-sheet.show{display:flex}
+.ios-sheet .c{background:#fff;width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:24px 22px calc(26px + env(safe-area-inset-bottom))}
+.ios-sheet h4{font-family:Oswald,sans-serif;color:#16233f;font-size:1.3rem;margin-bottom:14px}
+.ios-sheet ol{padding-left:20px;color:#1e2533;display:grid;gap:10px;font-size:.96rem;margin-bottom:18px}
+.ios-sheet ol span{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#eef1f6;vertical-align:middle;margin:0 2px}
+.ios-sheet button{width:100%;min-height:48px;border:0;border-radius:12px;background:#16233f;color:#fff;font:600 1rem Inter,sans-serif;cursor:pointer}
+.nav-inst{display:none;align-items:center;gap:6px;background:#eef1f6;color:#16233f;border:0;border-radius:10px;padding:9px 12px;font:600 .85rem Inter,sans-serif;cursor:pointer;margin-left:auto;margin-right:6px}
+.nav-inst.on{display:inline-flex}
+.nav-inst svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2}
+@media(min-width:1001px){.nav-inst{margin:0 12px 0 0}}
+@media(max-width:640px){.inst{bottom:84px}.nav-inst{padding:0;width:42px;height:42px;justify-content:center;margin-right:2px}.nav-inst span{display:none}.nav-inst svg{width:20px;height:20px}.brand{overflow:hidden}.brand small{display:block;overflow:hidden;text-overflow:ellipsis}}
+</style>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -342,6 +391,22 @@ footer{background:var(--navy);color:#c3cbdb;padding:60px 0 24px}
 </style>
 </head>
 <body>
+<div id="intro" aria-hidden="true">
+ <div class="in">
+  <div class="sh"><div class="rg"></div><img src="/logo.png" alt=""></div>
+  <h2>SOS</h2>
+  <p>Özel Güvenlik Eğitim Kurumu</p>
+  <div class="bar"><i></i></div>
+ </div>
+ <button type="button" id="introSkip">Geç ›</button>
+</div>
+<script>
+(function(){var el=document.getElementById('intro'),seen=false;try{seen=sessionStorage.getItem('sosIntro')==='1'}catch(e){}
+ if(seen||matchMedia('(prefers-reduced-motion: reduce)').matches){el.remove();return}
+ document.documentElement.style.overflow='hidden';
+ function end(){if(!el.parentNode)return;el.classList.add('done');document.documentElement.style.overflow='';try{sessionStorage.setItem('sosIntro','1')}catch(e){}setTimeout(function(){el.remove()},650)}
+ document.getElementById('introSkip').onclick=end;setTimeout(end,2500)})();
+</script>
 <div id="pbar"></div>
 
 <div class="top"><div class="wrap">
@@ -725,6 +790,47 @@ document.getElementById('chatX').onclick=()=>C.classList.remove('open');
 document.getElementById('chatF').onsubmit=e=>{e.preventDefault();ask(I.value);I.value=''};
 B.addEventListener('click',e=>{if(e.target.closest('[data-close]'))C.classList.remove('open')});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')C.classList.remove('open')});
+})();
+</script>
+<div class="inst" id="inst" role="dialog" aria-label="Uygulamayı yükle">
+ <img src="/icons/icon-192.png" alt="">
+ <div><b>SOS Güvenlik Uygulaması</b><small>Telefonunuza ekleyin, tek dokunuşla açın.</small></div>
+ <div class="ac"><button class="y" id="instY" type="button">Yükle</button><button class="n" id="instN" type="button">Şimdi değil</button></div>
+</div>
+<div class="ios-sheet" id="iosSheet"><div class="c">
+ <h4>Ana Ekrana Ekle</h4>
+ <ol>
+  <li>Safari'nin alt çubuğundaki <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f63b0" stroke-width="2"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 12v8h14v-8"/></svg></span> <b>Paylaş</b> simgesine dokunun.</li>
+  <li>Listeden <b>“Ana Ekrana Ekle”</b> seçeneğini seçin.</li>
+  <li>Sağ üstteki <b>Ekle</b>'ye dokunun. SOS uygulaması ana ekranınızda!</li>
+ </ol>
+ <button type="button" id="iosOk">Anladım</button>
+</div></div>
+<script>
+(function(){
+ if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){})});
+ var standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+ if(standalone)return;
+ var ua=navigator.userAgent,isIOS=/iphone|ipad|ipod/i.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+ var isSafari=isIOS&&/safari/i.test(ua)&&!/crios|fxios|edgios|opios/i.test(ua);
+ var mobile=matchMedia('(max-width:1000px)').matches;
+ var box=document.getElementById('inst'),sheet=document.getElementById('iosSheet'),deferred=null;
+ var navBtn=document.createElement('button');navBtn.className='nav-inst';navBtn.type='button';
+ navBtn.innerHTML='<svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14"/></svg><span>Uygulama</span>';
+ var burger=document.getElementById('burger');burger.parentNode.insertBefore(navBtn,burger);
+ function dismissed(){try{var t=+localStorage.getItem('sosInstNo')||0;return Date.now()-t<3*864e5}catch(e){return false}}
+ function show(){if(!dismissed())setTimeout(function(){box.classList.add('show')},3500)}
+ function install(){
+  if(deferred){deferred.prompt();deferred.userChoice.then(function(){deferred=null;box.classList.remove('show');navBtn.classList.remove('on')})}
+  else if(isIOS){box.classList.remove('show');sheet.classList.add('show')}
+ }
+ addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;navBtn.classList.add('on');if(mobile)show()});
+ addEventListener('appinstalled',function(){box.classList.remove('show');navBtn.classList.remove('on')});
+ if(isIOS){navBtn.classList.add('on');if(isSafari)show()}
+ document.getElementById('instY').onclick=install;navBtn.onclick=install;
+ document.getElementById('instN').onclick=function(){box.classList.remove('show');try{localStorage.setItem('sosInstNo',Date.now())}catch(e){}};
+ document.getElementById('iosOk').onclick=function(){sheet.classList.remove('show')};
+ sheet.onclick=function(e){if(e.target===sheet)sheet.classList.remove('show')};
 })();
 </script>
 </body>

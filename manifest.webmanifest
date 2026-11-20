@@ -1,0 +1,23 @@
+{
+  "name": "SOS Özel Güvenlik Eğitim Kurumu",
+  "short_name": "SOS Güvenlik",
+  "description": "Ankara Kızılay'da özel güvenlik temel, geçiş ve yenileme eğitimleri.",
+  "lang": "tr",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#16233f",
+  "theme_color": "#16233f",
+  "categories": ["education"],
+  "icons": [
+    {"src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "shortcuts": [
+    {"name": "Ön Kayıt", "url": "/#iletisim", "icons": [{"src": "/icons/icon-192.png", "sizes": "192x192"}]},
+    {"name": "Eğitimler", "url": "/#egitimler", "icons": [{"src": "/icons/icon-192.png", "sizes": "192x192"}]},
+    {"name": "Yenileme Hesaplayıcı", "url": "/#araclar", "icons": [{"src": "/icons/icon-192.png", "sizes": "192x192"}]}
+  ]
+}
